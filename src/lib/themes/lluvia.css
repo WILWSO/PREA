@@ -1,0 +1,59 @@
+/* Paleta "Lluvia": Dew #91B3BC, Rain #5B7D87, Currant #45415E, Slate #2B4251, Creosote #2E323C. */
+:root[data-theme='lluvia'] {
+	--color-text: #2e323c;
+	--color-heading: #2b4251;
+	--color-nav: #4d6670;
+	--color-muted: #566f78;
+	--color-subtle: #91a6ad;
+	--color-label: #33454f;
+
+	--color-bg: #f5f8f9;
+	--color-surface: #ffffff;
+	--color-surface-alt: #e8eff1;
+	--color-surface-translucent: #ffffff80;
+	--color-border: #dbe4e7;
+	--color-border-strong: #b9cbd0;
+
+	--color-primary: #2b4251;
+	--color-primary-contrast: #ffffff;
+	--color-link: #2b4251;
+	--color-link-soft: #4f717b;
+	--color-link-hover: #5b7d87;
+
+	--color-accent: #91b3bc;
+	--color-accent-strong: #45415e;
+	--color-accent-soft: #e4e2ec;
+
+	--color-hero-start: #2e323c;
+	--color-hero-mid: #2b4251;
+	--color-hero-end: #2b3a48;
+	--color-hero-glow: #45415e;
+	--color-page-hero-end: #2b4251;
+	--color-band-bg: #45415e;
+	--color-footer-bg: #2e323c;
+
+	--color-on-dark: #f3f6f7;
+	--color-on-dark-soft: #dde6e8;
+	--color-on-dark-muted: #c9d7db;
+	--color-on-dark-subtle: #9bb0b6;
+	--color-on-dark-accent: #91b3bc;
+	--color-on-dark-accent-soft: #b8c9ce;
+
+	--color-button-light-bg: #eef3f4;
+	--color-shadow: #2b425112;
+	--color-shadow-strong: #11161d66;
+
+	--color-input-text: #2e323c;
+	--color-input-bg: #fbfcfc;
+	--color-focus: #5b7d87;
+	--color-secondary-text: #2b4251;
+	--color-secondary-bg: #e8eff1;
+	--color-track: #dfe6e8;
+
+	--color-error-text: #782c21;
+	--color-error-bg: #fbefeb;
+	--color-error-border: #edc9c0;
+	--color-success-text: #245d49;
+	--color-success-bg: #ecf5ef;
+	--color-success-border: #c5e0cf;
+}

@@ -1,0 +1,113 @@
+/* Paleta "Glaciar": Marino #0B304D, Azul #1D5B8A, Celeste #5C99C5, Hielo #AFCBE3, Nieve #F0F5F9. */
+:root[data-theme='glaciar'] {
+	--color-text: #0f2234;
+	--color-heading: #0b304d;
+	--color-nav: #3f5c74;
+	--color-muted: #536b80;
+	--color-subtle: #8fa7bb;
+	--color-label: #1a3550;
+
+	--color-bg: #f7fafc;
+	--color-surface: #ffffff;
+	--color-surface-alt: #f0f5f9;
+	--color-surface-translucent: #ffffff80;
+	--color-border: #dbe6ef;
+	--color-border-strong: #afcbe3;
+
+	--color-primary: #1d5b8a;
+	--color-primary-contrast: #ffffff;
+	--color-link: #1d5b8a;
+	--color-link-soft: #2f6c9a;
+	--color-link-hover: #0b304d;
+
+	--color-accent: #5c99c5;
+	--color-accent-strong: #1d5b8a;
+	--color-accent-soft: #e3eef7;
+
+	--color-hero-start: #0b304d;
+	--color-hero-mid: #124068;
+	--color-hero-end: #1d5b8a;
+	--color-hero-glow: #5c99c5;
+	--color-page-hero-end: #1d5b8a;
+	--color-band-bg: #1d5b8a;
+	--color-footer-bg: #0b304d;
+
+	--color-on-dark: #f7fafc;
+	--color-on-dark-soft: #e1ebf3;
+	--color-on-dark-muted: #c9dbea;
+	--color-on-dark-subtle: #94b3cc;
+	--color-on-dark-accent: #afcbe3;
+	--color-on-dark-accent-soft: #c4d8e9;
+
+	--color-button-light-bg: #f0f5f9;
+	--color-shadow: #0b304d12;
+	--color-shadow-strong: #04142266;
+
+	--color-input-text: #0f2234;
+	--color-input-bg: #fbfdfe;
+	--color-focus: #5c99c5;
+	--color-secondary-text: #0b304d;
+	--color-secondary-bg: #e3eef7;
+	--color-track: #dbe6ef;
+
+	--color-error-text: #782c21;
+	--color-error-bg: #fbefeb;
+	--color-error-border: #edc9c0;
+	--color-success-text: #245d49;
+	--color-success-bg: #ecf5ef;
+	--color-success-border: #c5e0cf;
+}
+
+/* Glaciar oscuro: se activa con el modo "Oscuro" o con "Automático" en un dispositivo en modo oscuro. */
+:root[data-theme='glaciar'][data-scheme='dark'] {
+	--color-text: #dce7f0;
+	--color-heading: #f0f5f9;
+	--color-nav: #afcbe3;
+	--color-muted: #9db6cb;
+	--color-subtle: #6f8ca5;
+	--color-label: #c9dbea;
+
+	--color-bg: #071827;
+	--color-surface: #0d2236;
+	--color-surface-alt: #0a1e30;
+	--color-surface-translucent: #ffffff08;
+	--color-border: #1c3850;
+	--color-border-strong: #2d5273;
+
+	--color-primary: #5c99c5;
+	--color-primary-contrast: #061524;
+	--color-link: #8dbbe0;
+	--color-link-soft: #afcbe3;
+	--color-link-hover: #f0f5f9;
+
+	--color-accent: #5c99c5;
+	--color-accent-strong: #8dbbe0;
+	--color-accent-soft: #12304a;
+
+	--color-hero-start: #04111d;
+	--color-hero-mid: #0b304d;
+	--color-hero-end: #123f63;
+	--color-hero-glow: #1d5b8a;
+	--color-page-hero-end: #0b304d;
+	--color-band-bg: #0b304d;
+	--color-footer-bg: #040f19;
+
+	--color-button-light-bg: #f0f5f9;
+	--color-button-light-text: #0b304d;
+	--color-shadow: #00000040;
+	--color-shadow-strong: #00000080;
+
+	--color-input-text: #e3edf5;
+	--color-input-bg: #0a1e30;
+	--color-focus: #5c99c5;
+	--color-secondary-text: #e3edf5;
+	--color-secondary-bg: #163450;
+	--color-track: #1c3850;
+
+	--color-error-text: #f4b4a8;
+	--color-error-bg: #3a1712;
+	--color-error-border: #6b2c22;
+	--color-success-text: #9fd9bd;
+	--color-success-bg: #0f2e22;
+	--color-success-border: #1f5a41;
+}

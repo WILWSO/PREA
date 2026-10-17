@@ -1,0 +1,60 @@
+/* Paleta original de PREA: azul institucional y dorado. */
+:root,
+:root[data-theme='original'] {
+	--color-text: #172a3a;
+	--color-heading: #102d43;
+	--color-nav: #596a75;
+	--color-muted: #687782;
+	--color-subtle: #a7b0b0;
+	--color-label: #293e4a;
+
+	--color-bg: #fbfaf7;
+	--color-surface: #ffffff;
+	--color-surface-alt: #f1f0eb;
+	--color-surface-translucent: #ffffff80;
+	--color-border: #e4e1d9;
+	--color-border-strong: #c7d0d2;
+
+	--color-primary: #102d43;
+	--color-primary-contrast: #ffffff;
+	--color-link: #244f67;
+	--color-link-soft: #3e6474;
+	--color-link-hover: #275b75;
+
+	--color-accent: #c8a66b;
+	--color-accent-strong: #8f7045;
+	--color-accent-soft: #eee9de;
+
+	--color-hero-start: #102d43;
+	--color-hero-mid: #183c52;
+	--color-hero-end: #173348;
+	--color-hero-glow: #28506a;
+	--color-page-hero-end: #214b60;
+	--color-band-bg: #17394e;
+	--color-footer-bg: #102735;
+
+	--color-on-dark: #f8f7f2;
+	--color-on-dark-soft: #d8dfdf;
+	--color-on-dark-muted: #c8d2d7;
+	--color-on-dark-subtle: #8da0a5;
+	--color-on-dark-accent: #d4bb8d;
+	--color-on-dark-accent-soft: #d2c9b3;
+
+	--color-button-light-bg: #f6f2e9;
+	--color-shadow: #142b3910;
+	--color-shadow-strong: #07182466;
+
+	--color-input-text: #203743;
+	--color-input-bg: #fdfdfb;
+	--color-focus: #8ca7ab;
+	--color-secondary-text: #314b58;
+	--color-secondary-bg: #eef0ed;
+	--color-track: #e4e6e3;
+
+	--color-error-text: #782c21;
+	--color-error-bg: #fbefeb;
+	--color-error-border: #edc9c0;
+	--color-success-text: #245d49;
+	--color-success-bg: #ecf5ef;
+	--color-success-border: #c5e0cf;
+}

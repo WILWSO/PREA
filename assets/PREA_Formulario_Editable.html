@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>PREA | Solicitud de evaluación de cursos</title>
+		<style>
+			body {
+				font:
+					16px system-ui,
+					Arial,
+					sans-serif;
+				background: #f0f3f7;
+				color: #17263b;
+				margin: 0;
+			}
+			main {
+				max-width: 850px;
+				margin: 25px auto;
+				background: white;
+				padding: 35px;
+				border-radius: 12px;
+				box-shadow: 0 3px 18px #0001;
+			}
+			header {
+				border-bottom: 4px solid #173e63;
+				padding-bottom: 16px;
+			}
+			h1 {
+				font-size: 23px;
+				color: #173e63;
+			}
+			h2 {
+				font-size: 19px;
+				color: #173e63;
+				margin-top: 35px;
+			}
+			label {
+				display: block;
+				font-weight: 600;
+				margin: 13px 0 5px;
+			}
+			textarea,
+			input[type='text'] {
+				box-sizing: border-box;
+				width: 100%;
+				border: 1px solid #aebdcc;
+				border-radius: 6px;
+				padding: 10px;
+				font: inherit;
+				background: #fff;
+			}
+			textarea {
+				min-height: 90px;
+				resize: vertical;
+			}
+			.doctrine textarea {
+				min-height: 125px;
+			}
+			.hint {
+				color: #546579;
+				font-size: 14px;
+			}
+			.buttons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+				margin: 22px 0;
+			}
+			button {
+				background: #173e63;
+				color: white;
+				border: 0;
+				padding: 12px 16px;
+				border-radius: 6px;
+				cursor: pointer;
+			}
+			.checkbox {
+				display: block;
+				margin: 10px 0;
+				font-weight: 400;
+			}
+			.checkbox input {
+				margin-right: 9px;
+			}
+			footer {
+				margin-top: 35px;
+				border-top: 1px solid #ccc;
+				padding-top: 15px;
+				font-size: 13px;
+				color: #526174;
+			}
+			@media print {
+				body {
+					background: white;
+				}
+				main {
+					margin: 0;
+					padding: 0;
+					box-shadow: none;
+					max-width: none;
+				}
+				.buttons,
+				.hint.print-hide {
+					display: none;
+				}
+				h2 {
+					break-after: avoid;
+				}
+				label {
+					break-after: avoid;
+				}
+				textarea {
+					break-inside: avoid;
+					min-height: 90px;
+				}
+				header {
+					margin-bottom: 20px;
+				}
+			}
+			@media (max-width: 600px) {
+				main {
+					margin: 0;
+					padding: 20px;
+					border-radius: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>
+				<strong>PREA — PASTORES REFORMADOS EN ARGENTINA</strong>
+				<h1>Solicitud de evaluación doctrinal y académica de cursos</h1>
+				<p>Formulario para consideración de aval y certificación por el Consejo de Pastores.</p>
+			</header>
+			<p class="hint print-hide">
+				Complete los campos. Puede descargar sus respuestas en un archivo editable (.json) y
+				recuperarlas después; también puede usar «Imprimir / Guardar PDF». El archivo HTML no envía
+				información automáticamente a PREA.
+			</p>
+			<div class="buttons">
+				<button type="button" onclick="window.print()">Imprimir / Guardar PDF</button
+				><button type="button" onclick="downloadAnswers()">Guardar respuestas</button
+				><button type="button" onclick="document.getElementById('upload').click()">
+					Cargar respuestas</button
+				><input id="upload" type="file" accept=".json" hidden onchange="loadAnswers(this)" />
+			</div>
+			<form id="prea-form">
+				<section>
+					<h2>1. Identificación del responsable</h2>
+					<div class="field">
+						<label for="s0_0">Nombre completo del pastor</label
+						><textarea id="s0_0" name="s0_0" aria-label="Nombre completo del pastor"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_1">Iglesia o ministerio</label
+						><textarea id="s0_1" name="s0_1" aria-label="Iglesia o ministerio"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_2">Denominación eclesiástica</label
+						><textarea id="s0_2" name="s0_2" aria-label="Denominación eclesiástica"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_3">Formación teológica</label
+						><textarea id="s0_3" name="s0_3" aria-label="Formación teológica"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_4">Institución donde estudió</label
+						><textarea id="s0_4" name="s0_4" aria-label="Institución donde estudió"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_5">Teléfono y correo electrónico</label
+						><textarea id="s0_5" name="s0_5" aria-label="Teléfono y correo electrónico"></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_6">Institución que ofrece los cursos</label
+						><textarea
+							id="s0_6"
+							name="s0_6"
+							aria-label="Institución que ofrece los cursos"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s0_7">Confesión de fe o declaración doctrinal</label
+						><textarea
+							id="s0_7"
+							name="s0_7"
+							aria-label="Confesión de fe o declaración doctrinal"
+						></textarea>
+					</div>
+				</section>
+				<section>
+					<h2>2. Información académica (una ficha por curso)</h2>
+					<p class="hint">Para varios cursos, completar una copia por cada curso.</p>
+					<div class="field">
+						<label for="s1_0">Nombre del curso</label
+						><textarea id="s1_0" name="s1_0" aria-label="Nombre del curso"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_1">Objetivo general</label
+						><textarea id="s1_1" name="s1_1" aria-label="Objetivo general"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_2">Destinatarios</label
+						><textarea id="s1_2" name="s1_2" aria-label="Destinatarios"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_3">Duración total en horas</label
+						><textarea id="s1_3" name="s1_3" aria-label="Duración total en horas"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_4">Modalidad</label
+						><textarea id="s1_4" name="s1_4" aria-label="Modalidad"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_5">Cantidad de clases</label
+						><textarea id="s1_5" name="s1_5" aria-label="Cantidad de clases"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_6">Docente y formación</label
+						><textarea id="s1_6" name="s1_6" aria-label="Docente y formación"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_7">Requisitos de aprobación</label
+						><textarea id="s1_7" name="s1_7" aria-label="Requisitos de aprobación"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_8">Bibliografía principal</label
+						><textarea id="s1_8" name="s1_8" aria-label="Bibliografía principal"></textarea>
+					</div>
+					<div class="field">
+						<label for="s1_9">Tipo de certificado solicitado</label
+						><textarea id="s1_9" name="s1_9" aria-label="Tipo de certificado solicitado"></textarea>
+					</div>
+				</section>
+				<section>
+					<h2>3. Contenido programático</h2>
+					<div class="field">
+						<label for="s2_0">Unidad 1: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_0"
+							name="s2_0"
+							aria-label="Unidad 1: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_1">Unidad 2: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_1"
+							name="s2_1"
+							aria-label="Unidad 2: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_2">Unidad 3: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_2"
+							name="s2_2"
+							aria-label="Unidad 3: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_3">Unidad 4: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_3"
+							name="s2_3"
+							aria-label="Unidad 4: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_4">Unidad 5: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_4"
+							name="s2_4"
+							aria-label="Unidad 5: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_5">Unidad 6: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_5"
+							name="s2_5"
+							aria-label="Unidad 6: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_6">Unidad 7: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_6"
+							name="s2_6"
+							aria-label="Unidad 7: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s2_7">Unidad 8: tema, objetivo y bibliografía</label
+						><textarea
+							id="s2_7"
+							name="s2_7"
+							aria-label="Unidad 8: tema, objetivo y bibliografía"
+						></textarea>
+					</div>
+				</section>
+				<section>
+					<h2>4. Declaración de posiciones doctrinales</h2>
+					<p class="hint">Exponga su postura y cite sus fundamentos bíblicos y confesionales.</p>
+					<div class="doctrine">
+						<label for="s3_0"
+							>Sagradas Escrituras: inspiración, inerrancia, suficiencia y autoridad</label
+						><textarea
+							id="s3_0"
+							name="s3_0"
+							aria-label="Sagradas Escrituras: inspiración, inerrancia, suficiencia y autoridad"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_1"
+							>Salvación: doctrinas de la gracia, elección, regeneración y justificación</label
+						><textarea
+							id="s3_1"
+							name="s3_1"
+							aria-label="Salvación: doctrinas de la gracia, elección, regeneración y justificación"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_2">Pactos: teología del pacto, dispensacionalismo u otra</label
+						><textarea
+							id="s3_2"
+							name="s3_2"
+							aria-label="Pactos: teología del pacto, dispensacionalismo u otra"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_3"
+							>Diezmos y ofrendas: obligatoriedad del 10 % y sostenimiento de la iglesia</label
+						><textarea
+							id="s3_3"
+							name="s3_3"
+							aria-label="Diezmos y ofrendas: obligatoriedad del 10 % y sostenimiento de la iglesia"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_4"
+							>Dones espirituales: cesacionismo, continuacionismo, lenguas, profecía y
+							sanidad</label
+						><textarea
+							id="s3_4"
+							name="s3_4"
+							aria-label="Dones espirituales: cesacionismo, continuacionismo, lenguas, profecía y sanidad"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_5">Escatología: segunda venida, resurrección, juicio y consumación</label
+						><textarea
+							id="s3_5"
+							name="s3_5"
+							aria-label="Escatología: segunda venida, resurrección, juicio y consumación"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_6"
+							>Milenio: amilenialismo, premilenialismo, postmilenialismo y Apocalipsis 20</label
+						><textarea
+							id="s3_6"
+							name="s3_6"
+							aria-label="Milenio: amilenialismo, premilenialismo, postmilenialismo y Apocalipsis 20"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_7"
+							>Gobierno eclesiástico: presbiteriano, congregacional, episcopal u otro</label
+						><textarea
+							id="s3_7"
+							name="s3_7"
+							aria-label="Gobierno eclesiástico: presbiteriano, congregacional, episcopal u otro"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_8"
+							>Sacramentos: bautismo infantil, bautismo de creyentes y Santa Cena</label
+						><textarea
+							id="s3_8"
+							name="s3_8"
+							aria-label="Sacramentos: bautismo infantil, bautismo de creyentes y Santa Cena"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_9">Culto y adoración: principio regulador del culto</label
+						><textarea
+							id="s3_9"
+							name="s3_9"
+							aria-label="Culto y adoración: principio regulador del culto"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_10"
+							>Ministerio pastoral: ordenación, oficiales y ministerio femenino</label
+						><textarea
+							id="s3_10"
+							name="s3_10"
+							aria-label="Ministerio pastoral: ordenación, oficiales y ministerio femenino"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_11">Iglesia y disciplina: membresía y autoridad de la iglesia</label
+						><textarea
+							id="s3_11"
+							name="s3_11"
+							aria-label="Iglesia y disciplina: membresía y autoridad de la iglesia"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_12">Espíritu Santo: bautismo, llenura y santificación</label
+						><textarea
+							id="s3_12"
+							name="s3_12"
+							aria-label="Espíritu Santo: bautismo, llenura y santificación"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_13"
+							>Prosperidad y sanidad: teología de prosperidad y declaraciones de fe</label
+						><textarea
+							id="s3_13"
+							name="s3_13"
+							aria-label="Prosperidad y sanidad: teología de prosperidad y declaraciones de fe"
+						></textarea>
+					</div>
+					<div class="doctrine">
+						<label for="s3_14">Confesionalidad: Westminster, Tres Formas de Unidad u otras</label
+						><textarea
+							id="s3_14"
+							name="s3_14"
+							aria-label="Confesionalidad: Westminster, Tres Formas de Unidad u otras"
+						></textarea>
+					</div>
+				</section>
+				<section>
+					<h2>5. Materiales y metodología</h2>
+					<div class="field">
+						<label for="s4_0">Apuntes o manuales para alumnos</label
+						><textarea
+							id="s4_0"
+							name="s4_0"
+							aria-label="Apuntes o manuales para alumnos"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s4_1">Presentaciones, videos y recursos</label
+						><textarea
+							id="s4_1"
+							name="s4_1"
+							aria-label="Presentaciones, videos y recursos"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s4_2">Evaluaciones aplicadas</label
+						><textarea id="s4_2" name="s4_2" aria-label="Evaluaciones aplicadas"></textarea>
+					</div>
+					<div class="field">
+						<label for="s4_3">Porcentaje mínimo de asistencia</label
+						><textarea
+							id="s4_3"
+							name="s4_3"
+							aria-label="Porcentaje mínimo de asistencia"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s4_4">Certificados de participación o aprobación</label
+						><textarea
+							id="s4_4"
+							name="s4_4"
+							aria-label="Certificados de participación o aprobación"
+						></textarea>
+					</div>
+					<div class="field">
+						<label for="s4_5">Disponibilidad de materiales completos para revisión</label
+						><textarea
+							id="s4_5"
+							name="s4_5"
+							aria-label="Disponibilidad de materiales completos para revisión"
+						></textarea>
+					</div>
+				</section>
+				<section>
+					<h2>6. Documentación adjunta</h2>
+					<label class="checkbox"
+						><input type="checkbox" name="check0" />Programa completo de cada curso</label
+					><label class="checkbox"
+						><input type="checkbox" name="check1" />Bibliografía utilizada</label
+					><label class="checkbox"
+						><input type="checkbox" name="check2" />Currículum académico y ministerial de los
+						docentes</label
+					><label class="checkbox"
+						><input type="checkbox" name="check3" />Declaración doctrinal de la institución</label
+					><label class="checkbox"
+						><input type="checkbox" name="check4" />Modelo del certificado propuesto</label
+					><label class="checkbox"
+						><input type="checkbox" name="check5" />Material de estudio representativo</label
+					><label class="checkbox"
+						><input type="checkbox" name="check6" />Criterios de evaluación y aprobación</label
+					>
+				</section>
+				<section>
+					<h2>7. Declaración del responsable</h2>
+					<p>
+						Declaro que la información presentada corresponde fielmente a los contenidos y
+						enseñanzas impartidos. Reconozco que esta solicitud no implica aprobación automática ni
+						autoriza el uso del nombre, logotipo o firma de PREA. La concesión de aval o
+						certificación está sujeta a evaluación y resolución expresa del Consejo de Pastores.
+					</p>
+					<label>Nombre del responsable</label><input type="text" name="declaracion_nombre" /><label
+						>Firma (a completar según el medio utilizado)</label
+					><input type="text" name="firma" /><label>Fecha</label><input type="text" name="fecha" />
+				</section>
+				<section>
+					<h2>8. Uso exclusivo del Consejo de Pastores de PREA</h2>
+					<p class="hint">Esta sección debe completarla el Consejo.</p>
+					<label>Evaluación y observaciones</label><textarea name="evaluacion"></textarea
+					><label>Resolución: aprobado / aprobado con condiciones / pendiente / no aprobado</label
+					><textarea name="resolucion"></textarea
+					><label>Fecha y responsables de la evaluación</label><input type="text" name="consejo" />
+				</section>
+			</form>
+			<footer>
+				PREA · Documento de solicitud sujeto a evaluación institucional. La presentación no
+				constituye certificación ni aval.
+			</footer>
+		</main>
+		<script>
+			function downloadAnswers() {
+				const f = document.getElementById('prea-form');
+				let o = {};
+				for (const el of f.elements) {
+					if (!el.name) continue;
+					o[el.name] = el.type === 'checkbox' ? el.checked : el.value;
+				}
+				let b = new Blob([JSON.stringify(o, null, 2)], { type: 'application/json' }),
+					a = document.createElement('a');
+				a.href = URL.createObjectURL(b);
+				a.download = 'respuestas_PREA.json';
+				a.click();
+				URL.revokeObjectURL(a.href);
+			}
+			function loadAnswers(inp) {
+				let file = inp.files[0];
+				if (!file) return;
+				let r = new FileReader();
+				r.onload = () => {
+					try {
+						let o = JSON.parse(r.result);
+						for (const el of document.getElementById('prea-form').elements) {
+							if (el.name in o) {
+								if (el.type === 'checkbox') el.checked = !!o[el.name];
+								else el.value = o[el.name];
+							}
+						}
+					} catch (e) {
+						alert('No se pudo leer el archivo de respuestas');
+					}
+				};
+				r.readAsText(file);
+			}
+		</script>
+	</body>
+</html>

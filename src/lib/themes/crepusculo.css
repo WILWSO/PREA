@@ -1,0 +1,59 @@
+/* Paleta "Crepúsculo": Índigo #485290, Lavanda #8697B3, Arena #BDAA9C, Vino #8E5158, Berenjena #321323. */
+:root[data-theme='crepusculo'] {
+	--color-text: #2a1e28;
+	--color-heading: #321323;
+	--color-nav: #5a5470;
+	--color-muted: #6b6377;
+	--color-subtle: #a79fae;
+	--color-label: #3b2c3a;
+
+	--color-bg: #faf8f6;
+	--color-surface: #ffffff;
+	--color-surface-alt: #f1ebe6;
+	--color-surface-translucent: #ffffff80;
+	--color-border: #e6ddd6;
+	--color-border-strong: #c9c3d3;
+
+	--color-primary: #485290;
+	--color-primary-contrast: #ffffff;
+	--color-link: #485290;
+	--color-link-soft: #5c6699;
+	--color-link-hover: #8e5158;
+
+	--color-accent: #bdaa9c;
+	--color-accent-strong: #8e5158;
+	--color-accent-soft: #f1e6e5;
+
+	--color-hero-start: #321323;
+	--color-hero-mid: #3a2045;
+	--color-hero-end: #2f2a5a;
+	--color-hero-glow: #485290;
+	--color-page-hero-end: #485290;
+	--color-band-bg: #485290;
+	--color-footer-bg: #321323;
+
+	--color-on-dark: #f8f4f1;
+	--color-on-dark-soft: #e6dde0;
+	--color-on-dark-muted: #d4cad3;
+	--color-on-dark-subtle: #a99aa8;
+	--color-on-dark-accent: #bdaa9c;
+	--color-on-dark-accent-soft: #c9bcc6;
+
+	--color-button-light-bg: #f6f0eb;
+	--color-shadow: #32132312;
+	--color-shadow-strong: #12060c66;
+
+	--color-input-text: #2a1e28;
+	--color-input-bg: #fdfcfb;
+	--color-focus: #8697b3;
+	--color-secondary-text: #3b2c3a;
+	--color-secondary-bg: #efeaf0;
+	--color-track: #e6e1e8;
+
+	--color-error-text: #782c21;
+	--color-error-bg: #fbefeb;
+	--color-error-border: #edc9c0;
+	--color-success-text: #245d49;
+	--color-success-bg: #ecf5ef;
+	--color-success-border: #c5e0cf;
+}

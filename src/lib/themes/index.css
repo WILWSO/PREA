@@ -1,0 +1,5 @@
+/* Registrar aquí cada paleta nueva (y también en src/lib/theme.ts). */
+@import './original.css';
+@import './lluvia.css';
+@import './crepusculo.css';
+@import './glaciar.css';
